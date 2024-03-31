@@ -1,0 +1,37 @@
+{
+    "description":"A 1v1 map with a lot of metal and a lot of room to expand.  The metal is spread out in the middle of the map, so you will have to fight for it.  The map is very open, so you will have to be careful with your defenses.",
+    "version":"1.0",
+    "creator":"Anonemous2",
+    "players":[2, 2],
+    "planets": [
+        {
+            "name": "CrazyRush",
+            "mass": 10000,
+            "position_x": 0,
+            "position_y": 0,
+            "velocity_x": 0.000001,
+            "velocity_y": 0.000001,
+            "required_thrust_to_move": 0,
+            "starting_planet": true,
+            "planet": {
+                "seed": 0,
+                "radius": 500,
+                "heightRange": 0,
+                "waterHeight": 0,
+                "waterDepth": 100,
+                "temperature": 100,
+                "metalDensity": 100,
+                "metalClusters": 100,
+                "biomeScale": 100,
+                "biome": "earth",
+                "symmetryType": "terrain and models",
+                "symmetricalMetal": true,
+                "symmetricalStarts": true,
+                "numArmies": 0,
+                "landingZonesPerArmy": 1,
+                "landingZoneSize": 100
+            }
+        }
+    ]
+
+}
