@@ -19,7 +19,7 @@
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(__DIR__));
 define('APP', ROOT.DS.'app');
-define('VIEW', APP.DS.'views');
+define('VIEW', APP.DS.'views'.DS);
 define('CONTROLLERS', APP.DS.'controllers');
 define('MODEL', APP.DS.'models');
 define('CORE', APP.DS.'core'.DS);
