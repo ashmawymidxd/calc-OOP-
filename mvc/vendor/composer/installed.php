@@ -1,20 +1,20 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
-        'pretty_version' => '1.0',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
-        'type' => 'library',
+        'name' => 'ahmed/crazyrush',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'bbd3f4ef60c81af7ea4ce6b0a71ce9e5ef35925f',
+        'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => '1.0',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
-            'type' => 'library',
+        'ahmed/crazyrush' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'bbd3f4ef60c81af7ea4ce6b0a71ce9e5ef35925f',
+            'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
