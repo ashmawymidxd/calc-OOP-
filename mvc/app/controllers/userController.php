@@ -1,6 +1,7 @@
 <?php
 
 namespace ahmed\controllers;
+
 use ahmed\core\controller;
 
 class userController extends controller{

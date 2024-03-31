@@ -7,4 +7,5 @@ interface DBHandler{
     function update($table,$data);
     function delete($table,$id);
     function select($table);
+    function sqlQuery($sql);
 }
