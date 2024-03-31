@@ -24,5 +24,6 @@ define('CONTROLLERS', APP.DS.'controllers');
 define('MODEL', APP.DS.'models');
 define('CORE', APP.DS.'core'.DS);
 
-require CORE.'app.php';
-$app = new app;
+require "../vendor/autoload.php";
+
+$app = new ahmed\core\app;
