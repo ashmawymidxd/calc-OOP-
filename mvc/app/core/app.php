@@ -39,7 +39,7 @@ class app{
                 echo "Method not found";
             }
         }else{
-            echo "Controller not found";
+            echo "Class not found";
         }
     }
 

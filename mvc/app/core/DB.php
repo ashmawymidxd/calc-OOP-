@@ -5,9 +5,9 @@ namespace ahmed\core;
 use ahmed\core\DBHandler;
 
 class DB implements DBHandler{
-    public $table;
     private $dsn =  'mysql:host=localhost;dbname=test';
     protected $connection;
+    public $table;
 
     public function __construct() {
         try {
@@ -29,6 +29,7 @@ class DB implements DBHandler{
             $values = implode("','", array_values($data));
             $sql = "INSERT INTO $this->table ($keys) VALUES ('$values')";
             $this->connection->exec($sql);
+            return $this->connection->lastInsertId();
         } catch (\Throwable $th) {
             echo $th->getMessage();;
         }

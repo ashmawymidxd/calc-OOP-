@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-<h1>hi</h1>    
+    index page for app
 </body>
 </html>

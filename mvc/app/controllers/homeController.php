@@ -3,58 +3,58 @@
 namespace ahmed\controllers;
 
 use ahmed\core\controller;
-use ahmed\models\Instrutor;
+use ahmed\models\Users;
 
 class homeController extends controller{
 
-    public $table = 'users';
     public function index(){
-        return $this->view('home/index');
+        return $this->view('index');
     }
 
     public function create(){
-        $Instrutor = new Instrutor();
+        $Users = new Users();
         $data = [
             'name' => 'Ahmed',
-            'email' => 'uyu36555@gmail.com',
+            'email' => 'uyu36545@gmail.com',
             'password' => '123456'
         ];
 
-        $Instrutor->insert($data);
-        if($Instrutor == 'Data inserted successfully'){
+        $Users->insertUser($data);
+        if($Users == 'Data inserted successfully'){
             return $this->view('home/index');
         }
     }
 
     public function upgrade(){
-        $Instrutor = new Instrutor();
+        $Users = new Users();
         $data = [
             'id' => 1,
             'name' => 'Ahmed',
             'email' => 'uyu36515@gmail.com',
             'password' => '123456'
         ];
-        $Instrutor->update($data);
+        $Users->update($data);
 
-        if($Instrutor){
+        if($Users){
             echo 'Data updated successfully';
         }
     }
 
     public function destroy(){
-        $Instrutor = new Instrutor();
-        $Instrutor->delete(1);
-        if($Instrutor){
+        $Users = new Users();
+        $Users->delete(1);
+        if($Users){
             echo 'Data deleted successfully';
         }
     }
 
     public function show(){
-        $Instrutor = new Instrutor();
-        $data = $Instrutor->selectInstructor();
+        $Users = new Users();
+        $data = $Users->selectInstructor();
         echo '<pre>';
         print_r($data);
         echo '</pre>';
+        // return $this->view('index', ['data' => $data]);
     }
 
 }   
