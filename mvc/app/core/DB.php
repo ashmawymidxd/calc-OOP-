@@ -6,7 +6,7 @@ namespace ahmed\core;
 use ahmed\core\DBHandler;
 
 class DB implements DBHandler{
-
+    public $table;
     private $dsn =  'mysql:host=localhost;dbname=test';
     protected $connection;
 
@@ -17,20 +17,25 @@ class DB implements DBHandler{
         } catch (\PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
+        
+        // this function to return the model name auto
+        $thisModel = static::class;
+        $thisModelName = explode("\\",$thisModel);
+        $this->table = $thisModelName[2];
     }
 
-    public function insert($table, $data) {
+    public function insert($data) {
         try {
             $keys = implode(',', array_keys($data));
             $values = implode("','", array_values($data));
-            $sql = "INSERT INTO $table ($keys) VALUES ('$values')";
+            $sql = "INSERT INTO $this->table ($keys) VALUES ('$values')";
             $this->connection->exec($sql);
         } catch (\Throwable $th) {
             echo $th->getMessage();;
         }
     }
 
-    public function update($table, $data) {
+    public function update($data) {
         try {
             $id = $data['id'];
             unset($data['id']);
@@ -39,25 +44,25 @@ class DB implements DBHandler{
                 $set .= $key . "='" . $value . "',";
             }
             $set = rtrim($set, ',');
-            $sql = "UPDATE $table SET $set WHERE id=$id";
+            $sql = "UPDATE $this->table SET $set WHERE id=$id";
             $this->connection->exec($sql);
         } catch (\Throwable $th) {
             echo $th->getMessage();
         }
     }
 
-    public function delete($table, $id) {
+    public function delete($id) {
         try {
-            $sql = "DELETE FROM $table WHERE id=$id";
+            $sql = "DELETE FROM $this->table WHERE id=$id";
             $this->connection->exec($sql);
         } catch (\Throwable $th) {
             echo $th->getMessage();
         }
     }
 
-    public function select($table) {
+    public function select() {
         try {
-            $sql = "SELECT * FROM $table";
+            $sql = "SELECT * FROM $this->table";
             $stmt = $this->connection->query($sql);
             return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         } catch (\Throwable $th) {

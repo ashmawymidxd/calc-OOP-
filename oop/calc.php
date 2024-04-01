@@ -9,15 +9,28 @@ spl_autoload_register(function($class){
     require $class . '.php';
 });
 
-
 class Calce extends calcAdvanced implements calcInterface{
     public $num1;
     public $num2;
     public $operator;
     const PI = 3.14159;
+    private $name;
+    private $email;
+    private $password;
+    public $conn;
 
     function __construct(){
-        echo "the result is: ";
+        $this->conn = new mysqli('localhost', 'root', '', 'test');
+    }
+
+    function setName($name){
+        $this->name = $name;
+    }
+    function setEmail($email){
+        $this->email = $email;
+    }
+    function setPassword($password){
+        $this->password = $password;
     }
 
     function setNum1($num1){
@@ -73,5 +86,9 @@ class Calce extends calcAdvanced implements calcInterface{
             default:
                 echo "Invalid Operator";
         }
+    }
+    public function addUser(){
+        $sql = "INSERT INTO users (name,email,password) VALUES ('$this->name','$this->email','$this->password')";
+        $this->conn->query($sql);
     }
 }

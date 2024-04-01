@@ -4,6 +4,11 @@
 require 'calc.php';
 $calce = new Calce();
 
+// $calce->setName('ahmed');
+// $calce->setEmail('uyu365616@gmail.com');
+// $calce->setPassword('ahmed1234');
+// $calce->addUser();
+
 // echo $calce->getPi();
 // echo $calce->addation();
 // echo Calce::PI;

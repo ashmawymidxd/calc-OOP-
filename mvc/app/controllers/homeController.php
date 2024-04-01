@@ -3,53 +3,54 @@
 namespace ahmed\controllers;
 
 use ahmed\core\controller;
-use ahmed\core\DB;
+use ahmed\models\Instrutor;
 
 class homeController extends controller{
-
+    public $table = 'users';
     public function index(){
         return $this->view('home/index');
     }
 
     public function create(){
-        $db = new DB();
+        $Instrutor = new Instrutor();
         $data = [
             'name' => 'Ahmed',
-            'email' => 'uyu36525@gmail.com',
+            'email' => 'uyu36555@gmail.com',
             'password' => '123456'
         ];
-        $db->insert('users', $data);
-        if($db == 'Data inserted successfully'){
+
+        $Instrutor->insert($data);
+        if($Instrutor == 'Data inserted successfully'){
             return $this->view('home/index');
         }
     }
 
     public function upgrade(){
-        $db = new DB();
+        $Instrutor = new Instrutor();
         $data = [
             'id' => 1,
             'name' => 'Ahmed',
             'email' => 'uyu36515@gmail.com',
             'password' => '123456'
         ];
-        $db->update('users', $data);
+        $Instrutor->update($data);
 
-        if($db){
+        if($Instrutor){
             echo 'Data updated successfully';
         }
     }
 
     public function destroy(){
-        $db = new DB();
-        $db->delete('users', 1);
-        if($db){
+        $Instrutor = new Instrutor();
+        $Instrutor->delete(1);
+        if($Instrutor){
             echo 'Data deleted successfully';
         }
     }
 
     public function show(){
-        $db = new DB();
-        $data = $db->select('users');
+        $Instrutor = new Instrutor();
+        $data = $Instrutor->selectInstructor();
         echo '<pre>';
         print_r($data);
         echo '</pre>';
