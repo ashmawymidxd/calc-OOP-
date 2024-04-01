@@ -50,7 +50,7 @@ class homeController extends controller{
 
     public function show(){
         $Users = new Users();
-        $data = $Users->selectInstructor();
+        $data = $Users->selectall();
         echo '<pre>';
         print_r($data);
         echo '</pre>';

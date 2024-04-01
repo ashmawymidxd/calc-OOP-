@@ -11,4 +11,8 @@ class Users extends DB{
     public function getUserByEmailPassword($email, $password){
         return  $this->sqlQuery("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
     }
+
+    public function selectall(){
+        return $this->select();
+    }
 }

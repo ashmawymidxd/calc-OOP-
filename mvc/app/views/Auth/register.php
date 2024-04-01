@@ -6,12 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    login this
+    register this
 
     <form action="registerRequest" method="post">
-        <input type="text" name="name" placeholder="name">
-        <input type="email" name="email" placeholder="email">
-        <input type="password" name="password" placeholder="password">
+        <input type="text" name="name" placeholder="name" required>
+        <input type="email" name="email" placeholder="email" required>
+        <input type="password" name="password" placeholder="password" required>
         <input type="submit" value="register">
     </form>
     
