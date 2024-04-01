@@ -1,4 +1,5 @@
 <?php
+
 namespace ahmed\core;
 
 class app{

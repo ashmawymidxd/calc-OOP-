@@ -6,6 +6,7 @@ use ahmed\core\controller;
 use ahmed\models\Instrutor;
 
 class homeController extends controller{
+
     public $table = 'users';
     public function index(){
         return $this->view('home/index');
@@ -55,4 +56,5 @@ class homeController extends controller{
         print_r($data);
         echo '</pre>';
     }
+
 }   

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace ahmed\core;
 
 use ahmed\core\DBHandler;
@@ -17,7 +16,7 @@ class DB implements DBHandler{
         } catch (\PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
-        
+
         // this function to return the model name auto
         $thisModel = static::class;
         $thisModelName = explode("\\",$thisModel);
